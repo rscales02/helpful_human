@@ -1,13 +1,17 @@
 import { Component } from "react";
-import { Card } from "./Card";
-import { Button } from "react-bootstrap";
+import { DetailView } from "./DetailView";
+import { ListView } from "./ListView";
 
 export interface IMainPageProps {}
 
-export interface IMainPageState {}
+export interface IMainPageState {
+  listView: boolean;
+}
 
 class MainPage extends Component<IMainPageProps, IMainPageState> {
-  state: IMainPageState = {};
+  state: IMainPageState = {
+    listView: false,
+  };
 
   pageStyle: any = {
     marginLeft: "20%",
@@ -16,21 +20,17 @@ class MainPage extends Component<IMainPageProps, IMainPageState> {
   };
 
   handleClick = (e: React.SyntheticEvent<HTMLElement>) => {
-    console.log("clicked");
+    this.setState({ listView: !this.state.listView });
   };
 
   render() {
     return (
       <div style={this.pageStyle}>
-        <Card color="cffff1"></Card>
-        <div className="d-flex flex-row justify-content-center flex-fill">
-          <Card color="cffff1"></Card>
-          <Card color="cffff1"></Card>
-          <Card color="cffff1"></Card>
-          <Card color="cffff1"></Card>
-          <Card color="cffff1"></Card>
-        </div>
-        <Button onClick={this.handleClick}>Clear</Button>
+        {this.state.listView === true ? (
+          <ListView />
+        ) : (
+          <DetailView handleClick={this.handleClick} />
+        )}
       </div>
     );
   }

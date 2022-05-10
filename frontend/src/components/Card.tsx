@@ -9,9 +9,7 @@ export const Card: FC<ICardProps> = (props) => {
   };
   return (
     <div className="d-block rounded border m-1 border-dark">
-      <div className="p-2" style={cardStyle}>
-        Flex item 1
-      </div>
+      <div className="p-2" style={cardStyle} />
       <div className="p-2 justify-text-left">{"#" + props.color}</div>
     </div>
   );

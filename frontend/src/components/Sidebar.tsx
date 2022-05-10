@@ -13,12 +13,8 @@ export const Sidebar: FC<ISidebarProps> = (props) => {
     textAlign: "left",
   };
   return (
-    <div className="d-flex flex-column pl-2" style={divStyle}>
-      <Button
-        className="mx-auto mt-3"
-        variant="light"
-        style={{ fontWeight: "bold" }}
-      >
+    <div className="d-flex flex-column px-4" style={divStyle}>
+      <Button className="mt-3" variant="light" style={{ fontWeight: "bold" }}>
         Random Color
       </Button>
       <a href="#Red">Red</a>

@@ -16,7 +16,7 @@ function App() {
         />
       </header>
       <Header></Header>
-      <div className="m--auto" style={{ minHeight: "100%" }}>
+      <div style={{ minHeight: "100%" }}>
         <Sidebar></Sidebar>
         <MainPage></MainPage>
       </div>
