@@ -28,14 +28,14 @@ export const ListView: FC<IListViewProps> = (props) => {
 
   for (let i = 0; i < Math.floor(itemsPerPage / itemsPerRow); i++) {
     displayRows.push(
-      <div key={i} className="d-flex flex-row mt-4 flex-grow-1 h-25">
+      <div key={i} className="d-flex flex-row mt-2 flex-grow-1 h-25">
         {displayItems.slice(i, i + itemsPerRow)}
       </div>
     );
   }
 
   return (
-    <div className="flex-column w-75 justify-content-center px-2 mt-4">
+    <div className="flex-column w-75 justify-content-center px-2 mt-2">
       {displayRows}
       <ReactPaginate
         className=""

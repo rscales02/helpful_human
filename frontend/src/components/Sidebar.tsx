@@ -22,28 +22,28 @@ export const Sidebar: FC<ISidebarProps> = (props) => {
       >
         Random Color
       </Button>
-      <a href="#Red" className="mt-1 text-dark">
+      <a href="#Red" className="mt-4 text-dark">
         Red
       </a>
-      <a href="#Orange" className="mt-1 text-dark">
+      <a href="#Orange" className="mt-3 text-dark">
         Orange
       </a>
-      <a href="#Yellow" className="mt-1 text-dark">
+      <a href="#Yellow" className="mt-3 text-dark">
         Yellow
       </a>
-      <a href="#Green" className="mt-1 text-dark">
+      <a href="#Green" className="mt-3 text-dark">
         Green
       </a>
-      <a href="#Blue" className="mt-1 text-dark">
+      <a href="#Blue" className="mt-3 text-dark">
         Blue
       </a>
-      <a href="#Purple" className="mt-1 text-dark">
+      <a href="#Purple" className="mt-3 text-dark">
         Purple
       </a>
-      <a href="#Brown" className="mt-1 text-dark">
+      <a href="#Brown" className="mt-3 text-dark">
         Brown
       </a>
-      <a href="#Gray" className="mt-1 text-dark">
+      <a href="#Gray" className="mt-3 text-dark">
         Gray
       </a>
     </div>

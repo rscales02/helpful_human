@@ -24,7 +24,7 @@ function App() {
 export default App;
 
 const colorGen = () => {
-  let letters = "0123456789ABCDEF";
+  let letters = "0123456789abcdef";
   let colors = [];
   for (var i = 0; i < 200; i++) {
     let color = "#";
