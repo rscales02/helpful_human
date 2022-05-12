@@ -18,7 +18,7 @@ export const DetailView: FC<IDetailViewProps> = (props) => {
   return (
     <div className="d-block w-75 justify-content-center px-2 mt-4">
       <Card color={primary} big={true} onClick={props.handleClick} />
-      <div className="d-flex flex-row justify-content-center flex-fill">
+      <div className="d-flex flex-row justify-content-center flex-fill flex-sm-wrap flex-md-nowrap">
         {secondary}
       </div>
       <Button

@@ -23,6 +23,7 @@ class MainPage extends Component<IMainPageProps, IMainPageState> {
   };
 
   handleClear = (e: React.SyntheticEvent<HTMLElement>) => {
+    // clear state from detail view "Clear Btn"
     this.setState({
       listView: true,
       detailView: this.props.data.slice(0, 6),
@@ -30,6 +31,7 @@ class MainPage extends Component<IMainPageProps, IMainPageState> {
   };
 
   handleClick = (e: React.SyntheticEvent<HTMLElement>) => {
+    // Grab id of target card and return detail view data
     const id: string = e.currentTarget.id;
     let i = this.props.data.indexOf(id);
     this.setState({
@@ -39,6 +41,7 @@ class MainPage extends Component<IMainPageProps, IMainPageState> {
   };
 
   getRandom = (e: React.SyntheticEvent<HTMLElement>) => {
+    // Get random item and neighbors
     const rand = Math.floor(Math.random() * this.props.data.length);
     this.setState({
       listView: false,

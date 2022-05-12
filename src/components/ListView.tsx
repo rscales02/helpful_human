@@ -9,16 +9,16 @@ interface IListViewProps {
 
 export const ListView: FC<IListViewProps> = (props) => {
   const [page, setPage] = useState(0);
-  const [items, setItems] = useState(props.data);
+  // const [items, setItems] = useState(props.data);
   const itemsPerPage = 12;
   const itemsPerRow = 4;
   const numberOfRecordsVistited = page * itemsPerPage;
-  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const totalPages = Math.ceil(props.data.length / itemsPerPage);
   const changePage = ({ selected }: any) => {
     setPage(selected);
   };
 
-  const displayItems = items
+  const displayItems = props.data
     .slice(numberOfRecordsVistited, numberOfRecordsVistited + itemsPerPage)
     .map((item) => {
       return <Card color={item} key={item} onClick={props.handleClick} />;
