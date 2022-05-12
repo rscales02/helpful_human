@@ -30,7 +30,7 @@ class Search extends Component<ISearchProps, ISearchState> {
     return (
       <Form
         onSubmit={this.handleSubmit}
-        className="justify-content-end align-middle"
+        className="justify-content-end align-middle mt-1"
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control

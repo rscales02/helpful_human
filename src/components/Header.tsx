@@ -12,7 +12,7 @@ export const Header: FC<IHeaderProps> = (props) => {
     >
       <Col className="d-flex justify-content-start">
         <Navbar.Brand href="#home">
-          <img src="/logo-symbol.svg" alt="Logo" />
+          <img src={process.env.PUBLIC_URL + "/logo-symbol.svg"} alt="Logo" />
         </Navbar.Brand>
       </Col>
       <Col className="d-flex justify-content-end align-middle">
