@@ -2,9 +2,9 @@ import "./App.css";
 
 import { Header } from "./components/Header";
 import MainPage from "./components/MainPage";
-import { Sidebar } from "./components/Sidebar";
 
 function App() {
+  const colors = colorGen();
   return (
     <div className="App">
       <header>
@@ -16,12 +16,23 @@ function App() {
         />
       </header>
       <Header></Header>
-      <div style={{ minHeight: "100%" }}>
-        <Sidebar></Sidebar>
-        <MainPage></MainPage>
-      </div>
+      <MainPage data={colors}></MainPage>
     </div>
   );
 }
 
 export default App;
+
+const colorGen = () => {
+  let letters = "0123456789ABCDEF";
+  let colors = [];
+  for (var i = 0; i < 200; i++) {
+    let color = "#";
+    for (let j = 0; j < 6; j++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    colors.push(color);
+  }
+  colors.sort();
+  return colors;
+};

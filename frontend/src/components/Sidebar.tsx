@@ -2,29 +2,50 @@ import { FC } from "react";
 
 import { Button } from "react-bootstrap";
 
-interface ISidebarProps {}
+interface ISidebarProps {
+  onClick: (e: React.SyntheticEvent<HTMLElement>) => void;
+}
 
 export const Sidebar: FC<ISidebarProps> = (props) => {
   const divStyle: any = {
-    position: "fixed",
-    height: "100%",
-    width: "20%",
     backgroundColor: "gray",
     textAlign: "left",
+    position: "sticky",
   };
   return (
-    <div className="d-flex flex-column px-4" style={divStyle}>
-      <Button className="mt-3" variant="light" style={{ fontWeight: "bold" }}>
+    <div className="d-flex flex-column px-4 w-25" style={divStyle}>
+      <Button
+        className="mt-3"
+        variant="light"
+        style={{ fontWeight: "bold" }}
+        onClick={props.onClick}
+      >
         Random Color
       </Button>
-      <a href="#Red">Red</a>
-      <a href="#Orange">Orange</a>
-      <a href="#Yellow">Yellow</a>
-      <a href="#Green">Green</a>
-      <a href="#Blue">Blue</a>
-      <a href="#Purple">Purple</a>
-      <a href="#Brown">Brown</a>
-      <a href="#Gray">Gray</a>
+      <a href="#Red" className="mt-1 text-dark">
+        Red
+      </a>
+      <a href="#Orange" className="mt-1 text-dark">
+        Orange
+      </a>
+      <a href="#Yellow" className="mt-1 text-dark">
+        Yellow
+      </a>
+      <a href="#Green" className="mt-1 text-dark">
+        Green
+      </a>
+      <a href="#Blue" className="mt-1 text-dark">
+        Blue
+      </a>
+      <a href="#Purple" className="mt-1 text-dark">
+        Purple
+      </a>
+      <a href="#Brown" className="mt-1 text-dark">
+        Brown
+      </a>
+      <a href="#Gray" className="mt-1 text-dark">
+        Gray
+      </a>
     </div>
   );
 };

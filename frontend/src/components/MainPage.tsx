@@ -1,35 +1,63 @@
 import { Component } from "react";
 import { DetailView } from "./DetailView";
 import { ListView } from "./ListView";
+import { Sidebar } from "./Sidebar";
 
-export interface IMainPageProps {}
+export interface IMainPageProps {
+  data: string[];
+}
 
 export interface IMainPageState {
   listView: boolean;
+  detailView: string[];
 }
 
 class MainPage extends Component<IMainPageProps, IMainPageState> {
   state: IMainPageState = {
     listView: false,
+    detailView: this.props.data.slice(0, 6),
   };
 
   pageStyle: any = {
-    marginLeft: "20%",
-    width: "80%",
-    height: "100%",
+    minHeight: "100%",
+  };
+
+  handleClear = (e: React.SyntheticEvent<HTMLElement>) => {
+    this.setState({
+      listView: true,
+      detailView: this.props.data.slice(0, 6),
+    });
   };
 
   handleClick = (e: React.SyntheticEvent<HTMLElement>) => {
-    this.setState({ listView: !this.state.listView });
+    const id: string = e.currentTarget.id;
+    let i = this.props.data.indexOf(id);
+    this.setState({
+      listView: false,
+      detailView: this.props.data.slice(i, i + 6),
+    });
+  };
+
+  getRandom = (e: React.SyntheticEvent<HTMLElement>) => {
+    const rand = Math.floor(Math.random() * this.props.data.length);
+    this.setState({
+      listView: false,
+      detailView: this.props.data.slice(rand, rand + 6),
+    });
   };
 
   render() {
     return (
-      <div style={this.pageStyle}>
+      <div style={this.pageStyle} className="d-flex w-100">
+        <Sidebar onClick={this.getRandom}></Sidebar>
         {this.state.listView === true ? (
-          <ListView />
+          <ListView data={this.props.data} handleClick={this.handleClick} />
         ) : (
-          <DetailView handleClick={this.handleClick} />
+          <DetailView
+            handleClear={this.handleClear}
+            handleClick={this.handleClick}
+            data={this.state.detailView}
+          />
         )}
       </div>
     );

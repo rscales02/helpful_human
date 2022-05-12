@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 100%;
 }
 
 .App-logo {
@@ -35,4 +36,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navigationButtons {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.navigationButtons a {
+  padding: 10px;
+  margin: 8px;
+  color: black;
+  cursor: pointer;
+}
+
+.navigationButtons a:hover {
+  color: black;
+}
+
+.navigationActive a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.navigationDisabled a {
+  display: none;
 }
