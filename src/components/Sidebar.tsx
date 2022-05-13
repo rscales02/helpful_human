@@ -12,6 +12,16 @@ export const Sidebar: FC<ISidebarProps> = (props) => {
     textAlign: "left",
     position: "sticky",
   };
+  const btns = [
+    "Red",
+    "Orange",
+    "Yellow",
+    "Green",
+    "Blue",
+    "Purple",
+    "Brown",
+    "Gray",
+  ];
   return (
     <div className="d-flex flex-column px-4 w-25" style={divStyle}>
       <Button
@@ -22,30 +32,13 @@ export const Sidebar: FC<ISidebarProps> = (props) => {
       >
         Random Color
       </Button>
-      <a href="#Red" className="mt-4 text-dark">
-        Red
-      </a>
-      <a href="#Orange" className="mt-3 text-dark">
-        Orange
-      </a>
-      <a href="#Yellow" className="mt-3 text-dark">
-        Yellow
-      </a>
-      <a href="#Green" className="mt-3 text-dark">
-        Green
-      </a>
-      <a href="#Blue" className="mt-3 text-dark">
-        Blue
-      </a>
-      <a href="#Purple" className="mt-3 text-dark">
-        Purple
-      </a>
-      <a href="#Brown" className="mt-3 text-dark">
-        Brown
-      </a>
-      <a href="#Gray" className="mt-3 text-dark">
-        Gray
-      </a>
+      {btns.map((item): any => {
+        return (
+          <a href={"#" + item} className="mt-4 text-dark">
+            {item}
+          </a>
+        );
+      })}
     </div>
   );
 };
